@@ -1,17 +1,24 @@
 doctype html
 
 html
-  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
-  link(rel="stylesheet", href="stylesheets/style.css")
+  head
+    title  #{title}
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="stylesheets/style.css")
   
   
 
   body 
-    form(action="/search",method = 'get').text-center#form-container
-      p.text-center Search Your Favorite Superhero!
-      input(type="search",placeholder = "Enter Name",name = "name",autocomplete='off',title="Enter your favorite superheroe's name" required)#name.text-center
-      br
-      input(type="submit", value="Search")
+    .container-fluid
+      .container
+        form(action="/search",method = 'get').text-center#form-container
+            .form-group 
+              label(for="search").text-center.text-white.super-hero-tag Enter Superhero or villain!
+              input(type="search",placeholder = "Enter Name",name = "name",autocomplete='off',title="Enter your favorite superheroe's name" required)#name.text-center.form-control.form-control-lg
+              br
+              input(type="submit", value="Search").btn#search.btn.btn-warning
 
     script(src="https://code.jquery.com/jquery-3.4.1.min.js")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")   
+    script(src="javascripts/design.js")

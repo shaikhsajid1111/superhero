@@ -1,5 +1,9 @@
+@font-face {
+  font-family: 'megatron';
+  src: url("../fonts/MegatronCondensed.woff2") format("woff2"), url("../fonts/MegatronCondensed.woff") format("woff"), url("../fonts/MegatronCondensed.ttf") format("truetype");
+}
+
 body {
-  background-image: url("https://source.unsplash.com/1600x900/?marvel,dc,superhero");
   margin: 0;
   padding: 0;
 }
@@ -9,8 +13,32 @@ body {
 }
 
 #form-container #name {
-  width: 50vw;
-  height: 8vh;
-  border-radius: 5em;
+  outline: none !important;
+  -webkit-box-shadow: -1px 10px 21px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 10px 21px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 10px 21px 0px rgba(0, 0, 0, 0.75);
+  font-family: 'megatron',Arial, Helvetica, sans-serif;
+}
+
+#form-container #name:focus {
   outline: none;
+}
+
+#form-container #search {
+  outline: none;
+  border-radius: 10px;
+  font-family: 'megatron',Arial, Helvetica, sans-serif;
+}
+
+#form-container #search:hover {
+  background-color: white;
+  transition: all 400ms;
+}
+
+.super-hero-tag {
+  font-family: 'megatron',Arial, Helvetica, sans-serif;
+}
+
+.card {
+  width: 18rem;
 }

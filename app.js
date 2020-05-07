@@ -39,7 +39,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 }); 
 app.listen(PORT,()=>{
-  console.log("Running at " + PORT)
+  console.log(`Running at http:127.0.0.1:${PORT}`)
 })
 
 

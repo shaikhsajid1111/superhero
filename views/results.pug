@@ -1,10 +1,22 @@
 doctype html
 html
     head
-        results
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="stylesheets/style.css")
     body
-        if data.response == 'success'
-            each result in data.results
-                a(href = result.id) #{result.name} 
-        else
-            h1 #{data.error}        
+        .container-fluid
+            .container
+                if data.response == 'success'
+                    .row
+                        each result in data.results
+                            .col-6.col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-3            
+                                a(href = result.id) 
+                                    .card
+                                        img(src= result.image.url, alt="").card-img-top
+                                        .card-body
+                                            h5.card-title #{result.name}
+                                            div.card-text #{result.biography.aliases}
+                else
+                    h1 #{data.error}        
+        script(src="https://code.jquery.com/jquery-3.4.1.min.js")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")          

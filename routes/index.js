@@ -5,22 +5,12 @@ const PORT = 3000
 var fs = require('fs');
 var request = require('request');
 /* GET home page. */
+
 router.get('/', (req, res, next) =>{
 
-  fs.readFile('key.txt','utf-8',(err,key)=>{
-    if(err){
-      console.log(err)
-    };
-    var API_KEY = key;
-    const URL = `https://superheroapi.com/api/${API_KEY}`
-    request.get(URL,(err,response,body)=>{
-      if(err){
-        return next(err)
-      }
-      res.render('index', { title: 'Superhero App'});
-    })  
-  })
-  /*https://superheroapi.com/api/API_KEY*/
+  
+      res.render('index', { title: 'Superhero'});
+  
   
  
 });
