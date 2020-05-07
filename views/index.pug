@@ -1,0 +1,17 @@
+doctype html
+
+html
+  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+  link(rel="stylesheet", href="stylesheets/style.css")
+  
+  
+
+  body 
+    form(action="/search",method = 'get').text-center#form-container
+      p.text-center Search Your Favorite Superhero!
+      input(type="search",placeholder = "Enter Name",name = "name",autocomplete='off',title="Enter your favorite superheroe's name" required)#name.text-center
+      br
+      input(type="submit", value="Search")
+
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")   

@@ -1,0 +1,10 @@
+doctype html
+html
+    head
+        results
+    body
+        if data.response == 'success'
+            each result in data.results
+                a(href = result.id) #{result.name} 
+        else
+            h1 #{data.error}        

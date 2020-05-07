@@ -1,0 +1,16 @@
+body {
+  background-image: url("https://source.unsplash.com/1600x900/?marvel,dc,superhero");
+  margin: 0;
+  padding: 0;
+}
+
+#form-container {
+  padding-top: 45vh;
+}
+
+#form-container #name {
+  width: 50vw;
+  height: 8vh;
+  border-radius: 5em;
+  outline: none;
+}
