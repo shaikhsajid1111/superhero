@@ -1,22 +1,44 @@
 doctype html
 html
     head
+        
         link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
         link(rel="stylesheet", href="stylesheets/style.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+       
+        nav.d-flex.justify-content-end.p-4
+            button.fa.fa-search.btn-search.mr-sm-2
+
     body
         .container-fluid
             .container
                 if data.response == 'success'
                     .row
                         each result in data.results
-                            .col-6.col-xs-4.col-sm-4.col-md-4.col-lg-4.col-xl-3            
+                            .col-12.col-xs-6.col-sm-6.col-md-6.col-lg-4.col-xl-3.mr-0            
                                 a(href = result.id) 
                                     .card
                                         img(src= result.image.url, alt="").card-img-top
                                         .card-body
-                                            h5.card-title #{result.name}
-                                            div.card-text #{result.biography.aliases}
+                                            h5.card-title.text-center.nasalization #{result.name}
+                                            div.card-text.text-center Also Known as :  #{result.biography.aliases}
                 else
-                    h1 #{data.error}        
+                    h1 #{data.error}
+                //overlays
+                .overlay
+                    i(title="Close Search").closebtn.d-flex.p-4.justify-content-end.fa.fa-times.text-white
+                    .container.form-container.text-center
+                        form(method="GET",action="/search").nasalization
+
+                            input(type="search",title="Enter movie to search",autocomplete="off",name="name",autofocus,placeholder="Search hero or villain" required)#movie_search 
+                            br 
+                            br
+                            input(type="submit" value="Search").search-btn.btn
+    
+
+</div>
+
+                
         script(src="https://code.jquery.com/jquery-3.4.1.min.js")
-        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")          
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js") 
+        script(src="javascripts/design.js")         

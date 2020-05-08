@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Jost|Lato|Raleway|Rubik&display=swap');
 @font-face {
     font-family: 'megatron';
     src:
@@ -5,10 +6,21 @@
      url("../fonts/MegatronCondensed.woff") format("woff"), 
      url("../fonts/MegatronCondensed.ttf") format("truetype");
   }
+  @font-face {
+    font-family: 'nasalization';
+    src:
+     url("../fonts/nasalization-rg.eot") format("eot"), 
+     url("../fonts/nasalization-rg.ttf") format("truetype");
+  }  
+.nasalization{
+    font-family: 'nasalization',Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}  
 body{
     
     margin: 0;
     padding: 0;
+    background-size: cover;
+    min-height: 100vh;
   }
   #form-container{
     padding-top: 45vh;
@@ -28,9 +40,13 @@ body{
         outline: none;
         border-radius: 10px;
         font-family: 'megatron',Arial, Helvetica, sans-serif;
+        box-shadow: -4px 11px 19px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -4px 11px 19px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -4px 11px 19px 0px rgba(0,0,0,0.75);
         &:hover{
             background-color: white;
             transition: all 400ms;
+            outline: none;
         }
     }
 }
@@ -40,4 +56,76 @@ body{
 
 .card{
     width: 18rem;
+    margin: 10px;
+    box-shadow: -4px 11px 19px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -4px 11px 19px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px 11px 19px 0px rgba(0,0,0,0.75);
+    .card-text,.card-title{
+        color: black;
+        font-family: 'Rubik', sans-serif;
+   }
+   
 }
+.overlay{
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    background-color: black;
+    
+}
+.form-container{
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+.btn-search{
+    background: transparent;
+    outline: 0;
+    border: 0;
+    color:  white ;
+    
+}
+#movie_search{
+    
+    outline: 0;
+    width: 30vw;
+    text-align: center;
+        
+    
+    border: none;
+    border-bottom: 2px solid black;
+    color: black;
+    &:focus{
+        border-bottom: 2px solid white;
+    }
+    &:hover{
+        border-bottom: 2px solid white;
+    }
+}
+.search-btn{
+    outline: none;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    &:hover{
+        border: 1px solid green;
+        background-color: white;
+        color: black;
+        transition: all 400ms;
+    }
+
+}
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Jost', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/

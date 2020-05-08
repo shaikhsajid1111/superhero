@@ -6,10 +6,15 @@ function backgroundChange(){
     var body_element = document.body.style;
     /*setting css properties*/ 
     body_element.backgroundImage = 'url(../images/' + image_container[random_number] + ')';
-    body_element.backgroundSize = "cover";
-    body_element.backgroundRepeat = 'no-repeat';
-    body_element.height = "100vh";
-    body_element.width = "100%";
+
     
 }
 backgroundChange();
+$(document).ready(function(){
+    $(".btn-search").click(function(){
+        $('.overlay').css("display","block");
+    })
+    $(".closebtn").click(function(){
+        $('.overlay').css("display","none");
+    });
+})
