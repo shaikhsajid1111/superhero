@@ -28,7 +28,7 @@ router.get('/search/',(req,res,next)=>{
         return next(err)
       }
       console.log(JSON.parse(body))
-      res.render('results', { title: 'Superhero App',data : JSON.parse(body)});
+      res.render('results', { title: name,data : JSON.parse(body)});
     })  
   })
 

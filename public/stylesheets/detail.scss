@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Jost|Lato|Raleway|Rubik&display=swap');
+@font-face {
+    font-family: 'megatron';
+    src:
+     url("../fonts/MegatronCondensed.woff2") format("woff2"),
+     url("../fonts/MegatronCondensed.woff") format("woff"), 
+     url("../fonts/MegatronCondensed.ttf") format("truetype");
+  }
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#profile{
+    width: 20rem;
+}
+ .small-card{
+     padding: 5%;
+ }
+ .megatron{
+    font-family: 'megatron',Arial, Helvetica, sans-serif;
+}

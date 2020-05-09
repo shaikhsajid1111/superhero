@@ -1,11 +1,11 @@
 doctype html
 html
     head
-        
+        title #{title}
         link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
         link(rel="stylesheet", href="stylesheets/style.css")
-        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
-       
+        //link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        script(src="https://kit.fontawesome.com/5de3ed83f2.js")
         nav.d-flex.justify-content-end.p-4
             button.fa.fa-search.btn-search.mr-sm-2
 
@@ -15,20 +15,23 @@ html
                 if data.response == 'success'
                     .row
                         each result in data.results
-                            .col-12.col-xs-6.col-sm-6.col-md-6.col-lg-4.col-xl-3.mr-0            
+                            .col-12.col-xs-6.col-sm-6.col-md-6.col-lg-4.col-xl-3.mr-0          
                                 a(href = result.id) 
                                     .card
                                         img(src= result.image.url, alt="").card-img-top
                                         .card-body
-                                            h5.card-title.text-center.nasalization #{result.name}
+                                            h5.card-title.text-center #{result.name}
                                             div.card-text.text-center Also Known as :  #{result.biography.aliases}
                 else
-                    h1 #{data.error}
+                    h1.text-white.text-center#not-found #{title} not found 
+                        span.superhero <
+                    //h1.superhero.text-white.text-center#masks n o e f = n d
+                    
                 //overlays
                 .overlay
                     i(title="Close Search").closebtn.d-flex.p-4.justify-content-end.fa.fa-times.text-white
                     .container.form-container.text-center
-                        form(method="GET",action="/search").nasalization
+                        form(method="GET",action="/search")
 
                             input(type="search",title="Enter movie to search",autocomplete="off",name="name",autofocus,placeholder="Search hero or villain" required)#movie_search 
                             br 
@@ -36,7 +39,7 @@ html
                             input(type="submit" value="Search").search-btn.btn
     
 
-</div>
+
 
                 
         script(src="https://code.jquery.com/jquery-3.4.1.min.js")

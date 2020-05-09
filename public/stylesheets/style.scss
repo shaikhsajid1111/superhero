@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Jost|Lato|Raleway|Rubik&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Jost|Lato|Raleway|Rubik&display=swap');
 @font-face {
     font-family: 'megatron';
     src:
@@ -7,20 +7,26 @@
      url("../fonts/MegatronCondensed.ttf") format("truetype");
   }
   @font-face {
-    font-family: 'nasalization';
+    font-family: 'superhero';
     src:
-     url("../fonts/nasalization-rg.eot") format("eot"), 
-     url("../fonts/nasalization-rg.ttf") format("truetype");
-  }  
-.nasalization{
-    font-family: 'nasalization',Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}  
+     url("../fonts/SuperHero.woff2") format("woff2"),
+     url("../fonts/SuperHero.woff") format("woff"), 
+     url("../fonts/SuperHero.ttf") format("truetype");
+  }
+.megatron{
+    font-family: 'megatron',Arial, Helvetica, sans-serif !important;
+}
+
+.superhero{
+    font-family: 'superhero','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 body{
     
     margin: 0;
     padding: 0;
     background-size: cover;
     min-height: 100vh;
+   
   }
   #form-container{
     padding-top: 45vh;
@@ -60,9 +66,9 @@ body{
     box-shadow: -4px 11px 19px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: -4px 11px 19px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -4px 11px 19px 0px rgba(0,0,0,0.75);
+    font-family: 'megatron',Arial, Helvetica, sans-serif !important;
     .card-text,.card-title{
         color: black;
-        font-family: 'Rubik', sans-serif;
    }
    
 }
@@ -123,9 +129,9 @@ body{
     }
 
 }
-/*
-font-family: 'Lato', sans-serif;
-font-family: 'Jost', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Rubik', sans-serif;
-*/
+#not-found{
+    margin-top: 25vh;
+}
+#masks{
+    font-size: 9em;
+}

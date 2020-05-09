@@ -2,10 +2,77 @@ doctype html
 html
 head
     link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
-    link(rel="stylesheet", href="stylesheets/style.css")
+    link(rel="stylesheet", href="stylesheets/detail.css")
 body 
-    h1 #{data.name}
-
-
+    .container-fluid
+        
+        .container.megatron
+            h1.text-center.megatron.text-center.text-white #{data.name} 
+            
+            .row
+                .card.col-6.col-xs-6.col-md-12.col-lg-4.col-xl-4#profile
+                    img(src= data.image.url, alt="Character Profile").card-img-top
+                    .card-body
+                        h5.card-title.text-center.megatron #{data.name}
+                                    
+                
+                .card.col-md-4.small-card
+                    .card-body
+                        h5.card-title.text-center Powerstats
+                        .card-text 
+                            table.bordered.table.table-responsive
+                                tr
+                                    td Intelligence 
+                                    td #{data.powerstats.intelligence}
+                                tr
+                                    td Strength 
+                                    td #{data.powerstats.strength}
+                                tr 
+                                    td  Speed
+                                    td  #{data.powerstats.speed}
+                                tr 
+                                    td Durability  
+                                    td #{data.powerstats.durability}
+                                tr
+                                    td Power        
+                                    td #{data.powerstats.power}
+                                tr  
+                                    td Combat 
+                                    td  #{data.powerstats.combat}
+                .card.small-card.col-md-4
+                    .card-body
+                        h5.card-title.text-center Apperance
+                        .card-text 
+                            table.bordered.table.table-responsive.m-0
+                                tr
+                                    td Gender
+                                    td #{data.appearance.gender}
+                                tr
+                                    td Race 
+                                    td #{data.appearance.race}
+                                tr 
+                                    td  Height
+                                    td  #{data.appearance.height}
+                                tr 
+                                    td Weight  
+                                    td #{data.appearance.weight}
+                                tr
+                                    td Eye Color        
+                                    td #{data.appearance['eye-color']}
+                                tr  
+                                    td Hair color
+                                    td  #{data.appearance['hair-color']}
+                .card.small-card.col-md-4
+                    .card-body
+                        h5.card-title.text-center Work
+                        .card-text 
+                            table.bordered.table.table-responsive.m-1
+                                tr
+                                    td Work
+                                    td #{data.work.occupation}
+                                tr
+                                    td Base
+                                    td #{data.work.base}
     script(src="https://code.jquery.com/jquery-3.4.1.min.js")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")
+    script(src="javascripts/design.js")
