@@ -12,13 +12,96 @@ body{
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    
+}
+.card{
+    background: transparent;
+    color: white !important;
+    text-shadow: -1px 2px 9px #73DEC6 !important;
+    outline: none;
+    border: none;
+    
+}
+h1::selection{
+    color: rgb(255, 7, 234);
+}
+.card-title::selection{
+    color: rgb(255, 7, 214);
+}
+.card-text table tr td{
+    color: white;
+    &::selection{
+        color: red;
+    }
 }
 #profile{
     width: 20rem;
+    color: white;
+    box-shadow: -9px 5px 16px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -9px 5px 16px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -9px 5px 16px 0px rgba(0,0,0,0.75);
 }
  .small-card{
      padding: 5%;
+     color: white;
  }
  .megatron{
     font-family: 'megatron',Arial, Helvetica, sans-serif;
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: black;
+    background-color: black;
+    
+}
+.form-container{
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+.btn-search{
+    background: transparent;
+    outline: 0;
+    border: 0;
+    color:  white ;
+    
+}
+#character_search{
+    
+    outline: 0;
+    width: 30vw;
+    text-align: center;
+        
+    
+    border: none;
+    border-bottom: 2px solid black;
+    color: black;
+    &:focus{
+        border-bottom: 2px solid white;
+    }
+    &:hover{
+        border-bottom: 2px solid white;
+    }
+}
+.search-btn{
+    outline: none;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    &:hover{
+        border: 1px solid green;
+        background-color: white;
+        color: black;
+        transition: all 400ms;
+    }
+
 }

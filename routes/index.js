@@ -48,7 +48,7 @@ router.get("/:id",(req,res,next)=>{
         return next(err)
       }
       console.log(JSON.parse(body))
-      res.render('detail', { title: 'Superhero App',data : JSON.parse(body)});
+      res.render('detail', { title: JSON.parse(body).name,data : JSON.parse(body)});
     })  
   })
 }

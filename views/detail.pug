@@ -1,8 +1,13 @@
 doctype html
 html
 head
+    title #{title}
+    
     link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
     link(rel="stylesheet", href="stylesheets/detail.css")
+    script(src="https://kit.fontawesome.com/5de3ed83f2.js")
+    nav.d-flex.justify-content-end.p-4
+            button.fa.fa-search.btn-search.mr-sm-2
 body 
     .container-fluid
         
@@ -62,7 +67,7 @@ body
                                 tr  
                                     td Hair color
                                     td  #{data.appearance['hair-color']}
-                .card.small-card.col-md-4
+                .card.small-card.col-md-6
                     .card-body
                         h5.card-title.text-center Work
                         .card-text 
@@ -73,6 +78,45 @@ body
                                 tr
                                     td Base
                                     td #{data.work.base}
+            
+                .card.col-md-6
+                    .card-body
+                        h5.card-title.text-center Connections  
+                        .card-text
+                            table.table.bordered.table-responsive.m-1
+                                tr 
+                                    td Group Affiliations
+                                    td #{data.connections['group-affiliation']}
+                                tr
+                                    td Relatives
+                                    td #{data.connections.relatives}
+                .card.col-md-6
+                    .card-body
+                        h5.card-title.text-center More Details  
+                        .card-text
+                            table.table.bordered.table-responsive.m-1
+                                tr 
+                                    td Place Of Birth
+                                    td #{data.biography['place-of-birth']}
+                                tr
+                                    td First Appearance
+                                    td #{data.biography['first-appearance']}
+                                tr 
+                                    td Publishers
+                                    td #{data.biography.publisher}
+                                tr 
+                                    td Alignment
+                                    td #{data.biography['alignment']}  
+    .overlay.megatron
+        i(title="Close Search").closebtn.d-flex.p-4.justify-content-end.fa.fa-times.text-white
+        .container.form-container.text-center
+            form(method="GET",action="/search")
+                input(type="search",title="Enter superhero or villain to search",autocomplete="off",name="name",autofocus,placeholder="Search hero or villain" required)#character_search.form-control-lg 
+                br 
+                br
+                input(type="submit" value="Search").search-btn.btn
+
+    
     script(src="https://code.jquery.com/jquery-3.4.1.min.js")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js")
     script(src="javascripts/design.js")

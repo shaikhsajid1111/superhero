@@ -23,17 +23,16 @@ html
                                             h5.card-title.text-center #{result.name}
                                             div.card-text.text-center Also Known as :  #{result.biography.aliases}
                 else
-                    h1.text-white.text-center#not-found #{title} not found 
-                        span.superhero <
-                    //h1.superhero.text-white.text-center#masks n o e f = n d
+                    h1.text-white.text-center#not-found.megatron #{title} not found 
+                    h1.superhero.text-white.text-center#masks  f 
                     
                 //overlays
-                .overlay
+                .overlay.megatron
                     i(title="Close Search").closebtn.d-flex.p-4.justify-content-end.fa.fa-times.text-white
                     .container.form-container.text-center
                         form(method="GET",action="/search")
 
-                            input(type="search",title="Enter movie to search",autocomplete="off",name="name",autofocus,placeholder="Search hero or villain" required)#movie_search 
+                            input(type="search",title="Enter superhero or villain to search",autocomplete="off",name="name",autofocus,placeholder="Search hero or villain" required)#character_search.form-control-lg 
                             br 
                             br
                             input(type="submit" value="Search").search-btn.btn

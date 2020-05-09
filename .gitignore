@@ -25,4 +25,5 @@ benchmarks/graphs
 
 key.txt
 
-public/stylesheets/*.css
+/public/stylesheets/*.css
+/public/stylesheets/*.*.css
