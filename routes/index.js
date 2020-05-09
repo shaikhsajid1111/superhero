@@ -57,7 +57,7 @@ router.get("/:id",(req,res,next)=>{
       if(err){
         return next(err)
       }
-      /*console.log(JSON.parse(body))*/
+      console.log(JSON.parse(body))
       res.render('detail', { title: JSON.parse(body).name,data : JSON.parse(body)});
     })  
   })

@@ -8,113 +8,116 @@ head
     script(src="https://kit.fontawesome.com/5de3ed83f2.js")
     nav.d-flex.justify-content-end.p-4
             button.fa.fa-search.btn-search.mr-sm-2
+
 body 
     .container-fluid
-        
-        .container.megatron
-            h1.text-center.megatron.text-center.text-white #{data.name} 
+        if data.response == 'error'
+            h1.text-center.megatron.text-white#error Superhero or Supervillain not found!       
+        else
+            .container.megatron
+                h1.text-center.megatron.text-center.text-white #{data.name} 
             
-            .row
-                .card.col-6.col-xs-6.col-md-12.col-lg-4.col-xl-4#profile
-                    img(src= data.image.url, alt="Character Profile").card-img-top
-                    .card-body
-                        h5.card-title.text-center.megatron #{data.name}
+                .row
+                    .card.col-6.col-xs-6.col-md-12.col-lg-4.col-xl-4#profile
+                        img(src= data.image.url, alt="Character Profile").card-img-top
+                        .card-body
+                            h5.card-title.text-center.megatron #{data.name}
                                     
                 
-                .card.col-md-4.small-card
-                    .card-body
-                        h5.card-title.text-center Powerstats
-                        .card-text 
-                            table.bordered.table.table-responsive
-                                tr
-                                    td Intelligence 
-                                    td #{data.powerstats.intelligence}
-                                tr
-                                    td Strength 
-                                    td #{data.powerstats.strength}
-                                tr 
-                                    td  Speed
-                                    td  #{data.powerstats.speed}
-                                tr 
-                                    td Durability  
-                                    td #{data.powerstats.durability}
-                                tr
-                                    td Power        
-                                    td #{data.powerstats.power}
-                                tr  
-                                    td Combat 
-                                    td  #{data.powerstats.combat}
-                .card.small-card.col-md-4
-                    .card-body
-                        h5.card-title.text-center Apperance
-                        .card-text 
-                            table.bordered.table.table-responsive.m-0
-                                tr
-                                    td Gender
-                                    td #{data.appearance.gender}
-                                tr
-                                    td Race 
-                                    td #{data.appearance.race}
-                                tr 
-                                    td  Height
-                                    td  #{data.appearance.height}
-                                tr 
-                                    td Weight  
-                                    td #{data.appearance.weight}
-                                tr
-                                    td Eye Color        
-                                    td #{data.appearance['eye-color']}
-                                tr  
-                                    td Hair color
-                                    td  #{data.appearance['hair-color']}
-                .card.small-card.col-md-6
-                    .card-body
-                        h5.card-title.text-center Work
-                        .card-text 
-                            table.bordered.table.table-responsive.m-1
-                                tr
-                                    td Work
-                                    td #{data.work.occupation}
-                                tr
-                                    td Base
-                                    td #{data.work.base}
+                    .card.col-md-4.small-card
+                        .card-body
+                            h5.card-title.text-center Powerstats
+                            .card-text 
+                                table.bordered.table.table-responsive
+                                    tr
+                                        td Intelligence 
+                                        td #{data.powerstats.intelligence}
+                                    tr
+                                        td Strength 
+                                        td #{data.powerstats.strength}
+                                    tr 
+                                        td  Speed
+                                        td  #{data.powerstats.speed}
+                                    tr 
+                                        td Durability  
+                                        td #{data.powerstats.durability}
+                                    tr
+                                        td Power        
+                                        td #{data.powerstats.power}
+                                    tr  
+                                        td Combat 
+                                        td  #{data.powerstats.combat}
+                    .card.small-card.col-md-4
+                        .card-body
+                            h5.card-title.text-center Apperance
+                            .card-text 
+                                table.bordered.table.table-responsive.m-0
+                                    tr
+                                        td Gender
+                                        td #{data.appearance.gender}
+                                    tr
+                                        td Race 
+                                        td #{data.appearance.race}
+                                    tr 
+                                        td  Height
+                                        td  #{data.appearance.height}
+                                    tr 
+                                        td Weight  
+                                        td #{data.appearance.weight}
+                                    tr
+                                        td Eye Color        
+                                        td #{data.appearance['eye-color']}
+                                    tr  
+                                        td Hair color
+                                        td  #{data.appearance['hair-color']}
+                    .card.small-card.col-md-6
+                        .card-body
+                            h5.card-title.text-center Work
+                            .card-text 
+                                table.bordered.table.table-responsive.m-1
+                                    tr
+                                        td Work
+                                        td #{data.work.occupation}
+                                    tr
+                                        td Base
+                                        td #{data.work.base}
             
-                .card.col-md-6
-                    .card-body
-                        h5.card-title.text-center Connections  
-                        .card-text
-                            table.table.bordered.table-responsive.m-1
-                                tr 
-                                    td Group Affiliations
-                                    td #{data.connections['group-affiliation']}
-                                tr
-                                    td Relatives
-                                    td #{data.connections.relatives}
-                .card.col-md-6
-                    .card-body
-                        h5.card-title.text-center More Details  
-                        .card-text
-                            table.table.bordered.table-responsive.m-1
-                                tr 
-                                    td Place Of Birth
-                                    td #{data.biography['place-of-birth']}
-                                tr
-                                    td First Appearance
-                                    td #{data.biography['first-appearance']}
-                                tr 
-                                    td Publishers
-                                    td #{data.biography.publisher}
-                                tr 
-                                    td Alignment
-                                    td #{data.biography['alignment']}  
-    .overlay.megatron
-        i(title="Close Search").closebtn.d-flex.p-4.justify-content-end.fa.fa-times.text-white
-        .container.form-container.text-center
-            form(method="GET",action="/search")
-                input(type="search",title="Enter superhero or villain to search",autocomplete="off",name="name",autofocus,placeholder="Search hero or villain" required)#character_search.form-control-lg 
-                br 
-                br
-                input(type="submit" value="Search").search-btn.btn
+                    .card.col-md-6
+                        .card-body
+                            h5.card-title.text-center Connections  
+                            .card-text
+                                table.table.bordered.table-responsive.m-1
+                                    tr 
+                                        td Group Affiliations
+                                        td #{data.connections['group-affiliation']}
+                                    tr
+                                        td Relatives
+                                        td #{data.connections.relatives}
+                    .card.col-md-6
+                        .card-body
+                            h5.card-title.text-center More Details  
+                            .card-text
+                                table.table.bordered.table-responsive.m-1
+                                    tr 
+                                        td Place Of Birth
+                                        td #{data.biography['place-of-birth']}
+                                    tr
+                                        td First Appearance
+                                        td #{data.biography['first-appearance']}
+                                    tr 
+                                        td Publishers
+                                        td #{data.biography.publisher}
+                                    tr 
+                                        td Alignment
+                                        td #{data.biography['alignment']}  
+        .overlay.megatron
+            i(title="Close Search").closebtn.d-flex.p-4.justify-content-end.fa.fa-times.text-white
+            .container.form-container.text-center
+                form(method="GET",action="/search")
+                    input(type="search",title="Enter superhero or villain to search",autocomplete="off",name="name",autofocus,placeholder="Search hero or villain" required)#character_search.form-control-lg 
+                    br 
+                    br
+                    input(type="submit" value="Search").search-btn.btn
 
     
     script(src="https://code.jquery.com/jquery-3.4.1.min.js")
