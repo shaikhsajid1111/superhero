@@ -4,7 +4,7 @@
 > This app uses [superhero API](https://superheroapi.com/) to fetch details about character that you search 
 > . It has wide range of character details
 
-## Installation
+## Tech
 
 This app uses various other open source project to run properly
 
@@ -16,7 +16,7 @@ This app uses various other open source project to run properly
 
 
 
-## How to run this project?
+## Installation
 1. Get access token from [here](https://superheroapi.com/)
 1. Save that access token as 'key.txt' in root directory
 1. Download all dependencies by entering ``` npm install ``` command in terminal
